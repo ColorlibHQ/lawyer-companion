@@ -1,0 +1,39 @@
+/* -------------------------
+:: utility Class
+---------------------------- */
+.lawyer-pt-100 {
+    padding-top: 100px;
+}
+.lawyer-pt-80 {
+    padding-top: 80px;
+}
+.lawyer-pt-70 {
+    padding-top: 70px;
+}
+.lawyer-pt-60 {
+    padding-top: 60px;
+}
+.lawyer-pt-50 {
+    padding-top: 50px;
+}
+.lawyer-pt-30 {
+    padding-top: 30px;
+}
+.lawyer-pb-100 {
+    padding-bottom: 100px;
+}
+.lawyer-pb-80 {
+    padding-bottom: 80px;
+}
+.lawyer-pb-70 {
+    padding-bottom: 70px;
+}
+.lawyer-pb-60 {
+    padding-bottom: 60px;
+}
+.lawyer-pb-50 {
+    padding-bottom: 50px;
+}
+.lawyer-pb-30 {
+    padding-bottom: 30px;
+}
