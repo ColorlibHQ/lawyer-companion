@@ -150,6 +150,7 @@ class Lawyer_Hero extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .slider_area .single_slider .slider_text h3' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .slider_area_inner .single_slider .slider_text h3' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -159,6 +160,7 @@ class Lawyer_Hero extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .slider_area .single_slider .slider_text p' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .slider_area_inner .single_slider .slider_text p' => 'color: {{VALUE}};',
 				],
 			]
         );
@@ -176,43 +178,16 @@ class Lawyer_Hero extends Widget_Base {
 				'label' => __( 'Button Color', 'lawyer-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .slider_area .single_slider .slider_text .boxed-btn3' => 'color: {{VALUE}} !important',
+					'{{WRAPPER}} .slider_area .single_slider .slider_text .boxed-btn4' => 'border-color: {{VALUE}}; color: {{VALUE}}',
 				],
 			]
         );
-        $this->add_group_control(
-            Group_Control_Background::get_type(),
-            [
-                'name' => 'btn_bg_color',
-                'label' => __( 'Button BG Color', 'lawyer-companion' ),
-                'types' => [ 'gradient' ],
-                'selector' => '{{WRAPPER}} .slider_area .single_slider .slider_text .boxed-btn3',
-            ]
-        );
-
-        $this->add_control(
-            'button_hover_section_separator',
-            [
-                'label'     => __( 'Button Hover Styles', 'lawyer-companion' ),
-                'type'      => Controls_Manager::HEADING,
-                'separator' => 'after',
-            ]
-        ); 
         $this->add_control(
 			'button_hover_col', [
 				'label' => __( 'Button Hover Color', 'lawyer-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .slider_area .single_slider .slider_text .boxed-btn3:hover' => 'color: {{VALUE}} !important; border-color: {{VALUE}};',
-				],
-			]
-        );
-        $this->add_control(
-			'button_hover_bg_col', [
-				'label' => __( 'Button Hover Bg Color', 'lawyer-companion' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .slider_area .single_slider .slider_text .boxed-btn3:hover' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .slider_area .single_slider .slider_text .boxed-btn4:hover' => 'border-color: transparent; background: {{VALUE}}; color: transparent',
 				],
 			]
         );

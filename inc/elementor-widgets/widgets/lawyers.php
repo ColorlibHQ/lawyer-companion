@@ -34,7 +34,7 @@ class Lawyer_Lawyers extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-settings';
+		return 'eicon-person';
 	}
 
 	public function get_categories() {
@@ -206,7 +206,16 @@ class Lawyer_Lawyers extends Widget_Base {
                 'label' => __( 'Section Title Color', 'lawyer-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .expert_doctors_area .doctors_title h3' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .our_loyers .section_title h3' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'sub_title_col', [
+                'label' => __( 'Sub Title Color', 'lawyer-companion' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .our_loyers .section_title p' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -224,7 +233,7 @@ class Lawyer_Lawyers extends Widget_Base {
                 'label' => __( 'Member Name Color', 'lawyer-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .expert_doctors_area .single_expert .experts_name h3' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .our_loyers .single_loyers h3' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -233,34 +242,35 @@ class Lawyer_Lawyers extends Widget_Base {
                 'label' => __( 'Member Designation Color', 'lawyer-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .expert_doctors_area .single_expert .experts_name span' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .our_loyers .single_loyers span' => 'color: {{VALUE}};',
                 ],
             ]
         );
 
         $this->add_control(
-            'single_item_bg_styles_seperator',
+            'single_social_styles_seperator',
             [
-                'label' => esc_html__( 'Single Item Bg Styles', 'lawyer-companion' ),
+                'label' => esc_html__( 'Social Icon Styles', 'lawyer-companion' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'after'
             ]
         );
         $this->add_control(
-            'member_bg_color', [
-                'label' => __( 'Bg Color', 'lawyer-companion' ),
+            'icon_bg_color', [
+                'label' => __( 'Icon Bg Color', 'lawyer-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .expert_doctors_area .single_expert .experts_name' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .our_loyers .single_loyers .social_links ul li a' => 'background: {{VALUE}};',
                 ],
             ]
         );
         $this->add_control(
-            'hover_member_bg_color', [
-                'label' => __( 'Item Hover Bg Color', 'lawyer-companion' ),
+            'icon_color', [
+                'label' => __( 'Icon Color', 'lawyer-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .expert_doctors_area .single_expert:hover .experts_name' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .our_loyers .single_loyers .social_links ul li a' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .our_loyers .single_loyers .social_links ul li a:hover' => 'background: {{VALUE}}; color: #fff',
                 ],
             ]
         );

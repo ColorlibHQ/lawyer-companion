@@ -119,47 +119,6 @@ class Lawyer_Review_Contents extends Widget_Base {
         );
         $this->end_controls_section(); // End Hero content
 
-        /**
-         * Style Tab
-         * ------------------------------ Style Title ------------------------------
-         *
-         */
-        $this->start_controls_section(
-            'style_title', [
-                'label' => __( 'Style Review Section', 'lawyer-companion' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'sec_overlay_col', [
-                'label' => __( 'Section Overlay Color', 'lawyer-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .single-testmonial.overlay2::before' => 'background: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'rev_text_col', [
-                'label' => __( 'Review Text Color', 'lawyer-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .testmonial_area .testmonial_info p' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'rev_name_col', [
-                'label' => __( 'Reviewer Name Color', 'lawyer-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .testmonial_area .testmonial_info h4' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->end_controls_section();
-
 	}
 
 	protected function render() {

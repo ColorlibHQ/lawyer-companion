@@ -34,7 +34,7 @@ class Lawyer_Practice_Area extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-settings';
+		return 'eicon-posts-masonry';
 	}
 
 	public function get_categories() {
@@ -198,29 +198,39 @@ class Lawyer_Practice_Area extends Widget_Base {
             ]
         );
         $this->add_control(
-            'sec_bg_col', [
-                'label' => __( 'Section Bg Color', 'lawyer-companion' ),
+            'sec_title_col', [
+                'label' => __( 'Section Title Color', 'lawyer-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .service_area' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .practice_area .section_title h3' => 'color: {{VALUE}};',
                 ],
             ]
         );
         $this->add_control(
-            'sec_mid_bg_col', [
-                'label' => __( 'Middle Section Bg Color', 'lawyer-companion' ),
+            'sub_title_col', [
+                'label' => __( 'Sub Title Color', 'lawyer-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .service_area .col-xl-4:nth-child(2) .single_service' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .practice_area .section_title p' => 'color: {{VALUE}};',
                 ],
             ]
         );
+        
         $this->add_control(
             'singl_item_styles_seperator',
             [
-                'label' => esc_html__( 'Single Service Item Styles', 'lawyer-companion' ),
+                'label' => esc_html__( 'Single Item Styles', 'lawyer-companion' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'after'
+            ]
+        );
+        $this->add_control(
+            'item_bg_col', [
+                'label' => __( 'Bg Color', 'lawyer-companion' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .practice_area .single_practice .practice_hover' => 'background: {{VALUE}};',
+                ],
             ]
         );
         $this->add_control(
@@ -228,7 +238,7 @@ class Lawyer_Practice_Area extends Widget_Base {
                 'label' => __( 'Icon Color', 'lawyer-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .service_area .single_service .icon i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .practice_area .single_practice .practice_hover i' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -237,7 +247,7 @@ class Lawyer_Practice_Area extends Widget_Base {
                 'label' => __( 'Title Color', 'lawyer-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .service_area .single_service h3' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .practice_area .single_practice .practice_hover h3' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -246,43 +256,16 @@ class Lawyer_Practice_Area extends Widget_Base {
                 'label' => __( 'Text Color', 'lawyer-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .service_area .single_service p' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'singl_item_btn_styles_seperator',
-            [
-                'label' => esc_html__( 'Button Styles', 'lawyer-companion' ),
-                'type' => Controls_Manager::HEADING,
-                'separator' => 'after'
-            ]
-        );
-        $this->add_control(
-            'button_col', [
-                'label' => __( 'Button Color', 'lawyer-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .service_area .single_service .boxed-btn3-white' => 'color: {{VALUE}} !important; border-color: {{VALUE}};',
-                    '{{WRAPPER}} .service_area .single_service .boxed-btn3-white:hover' => 'background: {{VALUE}}; border-color: transparent;',
+                    '{{WRAPPER}} .practice_area .single_practice .practice_hover p' => 'color: {{VALUE}};',
                 ],
             ]
         );
         $this->add_control(
-            'singl_item_btn_hover_styles_seperator',
-            [
-                'label' => esc_html__( 'Button Hover Styles', 'lawyer-companion' ),
-                'type' => Controls_Manager::HEADING,
-                'separator' => 'after'
-            ]
-        );
-        $this->add_control(
-            'button_hover_col', [
-                'label' => __( 'Button Hover Color', 'lawyer-companion' ),
+            'anchor_txt_col', [
+                'label' => __( 'Anchor Text Color', 'lawyer-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .service_area .single_service .boxed-btn3-white:hover' => 'color: {{VALUE}} !important;',
+                    '{{WRAPPER}} .practice_area .single_practice .practice_hover .hover_inner .lern_more' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -296,10 +279,11 @@ class Lawyer_Practice_Area extends Widget_Base {
     $big_title = !empty( $settings['big_title'] ) ? $settings['big_title'] : '';
     $sub_title = !empty( $settings['sub_title'] ) ? $settings['sub_title'] : '';
     $practice_items = !empty( $settings['practice_items'] ) ? $settings['practice_items'] : '';
+    $dynamic_class = ! is_front_page() ? 'practice_area practice_area2' : 'practice_area';
     ?>
 
     <!-- practice_area_start -->
-    <div class="practice_area">
+    <div class="<?php echo esc_attr( $dynamic_class )?>">
         <div class="container-fluid p-0">
             <div class="row">
                 <div class="col-xl-12">

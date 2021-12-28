@@ -34,7 +34,7 @@ class Lawyer_Home_Appointment extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-play-o';
+		return 'eicon-countdown';
 	}
 
 	public function get_categories() {
@@ -111,57 +111,39 @@ class Lawyer_Home_Appointment extends Widget_Base {
             ]
         );
         $this->add_control(
-			'sub_title_col', [
-				'label' => __( 'Sub title Color', 'lawyer-companion' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .messege_area .section_title .sub_heading' => 'color: {{VALUE}};',
-				],
-			]
-        );
-        $this->add_control(
 			'sec_title_col', [
-				'label' => __( 'Big Title Color', 'lawyer-companion' ),
+				'label' => __( 'Section Title Color', 'lawyer-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .messege_area .section_title h3' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .messege_area .section_title .seperator' => 'background: {{VALUE}};',
-				],
-			]
-        );
-
-        $this->add_control(
-            'btn_styles_seperator',
-            [
-                'label' => esc_html__( 'Button Styles', 'lawyer-companion' ),
-                'type' => Controls_Manager::HEADING,
-                'separator' => 'after'
-            ]
-        );
-        $this->add_control(
-			'btn_border_txt_col', [
-				'label' => __( 'Button Border & Text Color', 'lawyer-companion' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .messege_area .messege .boxed-btn' => 'color: {{VALUE}} !important; border-color: {{VALUE}};',
+					'{{WRAPPER}} .appointment_area .appointment_info h3' => 'color: {{VALUE}};',
 				],
 			]
         );
         $this->add_control(
-			'btn_hvr_border_bg_col', [
-				'label' => __( 'Button Hover Border & Bg Color', 'lawyer-companion' ),
+			'sub_title_col', [
+				'label' => __( 'Sub Title Color', 'lawyer-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .messege_area .messege .boxed-btn:hover' => 'background: {{VALUE}}; border-color: {{VALUE}};',
+					'{{WRAPPER}} .appointment_area .appointment_info p' => 'color: {{VALUE}};',
 				],
 			]
         );
         $this->add_control(
-			'btn_hvr_txt_col', [
-				'label' => __( 'Button Hover Text Color', 'lawyer-companion' ),
+			'shade_icon_col', [
+				'label' => __( 'Shade Icon Color', 'lawyer-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .messege_area .messege .boxed-btn:hover' => 'color: {{VALUE}} !important;;',
+					'{{WRAPPER}} .appointment_area .opacity_icon i' => 'color: {{VALUE}};',
+				],
+			]
+        );
+        $this->add_control(
+			'btn_col', [
+				'label' => __( 'Button Color', 'lawyer-companion' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .appointment_area .appoinment_button .boxed-btn5' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .appointment_area .appoinment_button .boxed-btn5:hover' => 'background: transparent; border-color: {{VALUE}}; color: {{VALUE}} !important;',
 				],
 			]
         );

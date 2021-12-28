@@ -196,12 +196,30 @@ class Lawyer_About_Us extends Widget_Base {
         );
 
         $this->add_control(
-            'sub_title_col', [
-                'label' => __( 'Sub Title Color', 'lawyer-companion' ),
+            'circle_col', [
+                'label' => __( 'Circle Color', 'lawyer-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .welcome_lawyer_area .welcome_lawyer_info h2' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .about_area .single_about_info .about_thumb .image_hover' => 'background: {{VALUE}};',
                 ],
+            ]
+        );
+        $this->add_control(
+            'shade_icon_col', [
+                'label' => __( 'Shade Icon Color', 'lawyer-companion' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .about_area .opacity_icon i' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'content_styles_seperator',
+            [
+                'label' => esc_html__( 'Content Styles', 'lawyer-companion' ),
+                'type' => Controls_Manager::HEADING,
+                'separator' => 'after'
             ]
         );
         $this->add_control(
@@ -209,7 +227,7 @@ class Lawyer_About_Us extends Widget_Base {
                 'label' => __( 'Sec Title Color', 'lawyer-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .welcome_lawyer_area .welcome_lawyer_info h3' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .about_area .single_about_info h3' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -218,45 +236,16 @@ class Lawyer_About_Us extends Widget_Base {
                 'label' => __( 'Sec Text Color', 'lawyer-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .welcome_lawyer_area .welcome_lawyer_info p' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .welcome_lawyer_area .welcome_lawyer_info ul li' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .about_area .single_about_info p' => 'color: {{VALUE}};',
                 ],
             ]
         );
         $this->add_control(
-            'list_circle_col', [
-                'label' => __( 'List Item Icon Color', 'lawyer-companion' ),
+            'counter_col', [
+                'label' => __( 'Counter Color', 'lawyer-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .welcome_lawyer_area .welcome_lawyer_info ul li::before' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'btn_styles_seperator',
-            [
-                'label' => esc_html__( 'Button Styles', 'lawyer-companion' ),
-                'type' => Controls_Manager::HEADING,
-                'separator' => 'after'
-            ]
-        );
-        $this->add_control(
-            'btn_txt_col', [
-                'label' => __( 'Button Text & Border Color', 'lawyer-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .welcome_lawyer_area .welcome_lawyer_info .boxed-btn3-white-2' => 'color: {{VALUE}} !important; border-color: {{VALUE}}',
-                    '{{WRAPPER}} .welcome_lawyer_area .welcome_lawyer_info .boxed-btn3-white-2:hover' => 'background: {{VALUE}} !important; border-color: transparent',
-                ],
-            ]
-        );
-        $this->add_control(
-            'btn_hvr_col', [
-                'label' => __( 'Button Hover Color', 'lawyer-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .welcome_lawyer_area .welcome_lawyer_info .boxed-btn3-white-2:hover' => 'color: {{VALUE}} !important',
+                    '{{WRAPPER}} .about_area .single_about_info .total_cases .single_cases h4' => 'color: {{VALUE}};',
                 ],
             ]
         );

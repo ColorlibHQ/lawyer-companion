@@ -396,14 +396,6 @@ if ( !class_exists( 'Lawyer_El_Widgets' ) ) {
             require_once LAWYER_COMPANION_EW_DIR_PATH . 'widgets/lawyers.php';
             require_once LAWYER_COMPANION_EW_DIR_PATH . 'widgets/review-section.php';
             require_once LAWYER_COMPANION_EW_DIR_PATH . 'widgets/home-appointment.php';
-            // require_once LAWYER_COMPANION_EW_DIR_PATH . 'widgets/departments.php';
-            // require_once LAWYER_COMPANION_EW_DIR_PATH . 'widgets/business-expert-item.php';
-            // require_once LAWYER_COMPANION_EW_DIR_PATH . 'widgets/business-expert.php';
-            // require_once LAWYER_COMPANION_EW_DIR_PATH . 'widgets/emergency-contact-section.php';
-            // require_once LAWYER_COMPANION_EW_DIR_PATH . 'widgets/single-event.php';
-            // require_once LAWYER_COMPANION_EW_DIR_PATH . 'widgets/clients.php';
-            // require_once LAWYER_COMPANION_EW_DIR_PATH . 'widgets/faq-section.php';
-            // require_once LAWYER_COMPANION_EW_DIR_PATH . 'widgets/projects.php';
             require_once LAWYER_COMPANION_EW_DIR_PATH . 'widgets/contact.php';
         }
 
@@ -427,14 +419,6 @@ if ( !class_exists( 'Lawyer_El_Widgets' ) ) {
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Lawyerelementor\Widgets\Lawyer_Lawyers() ); 
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Lawyerelementor\Widgets\Lawyer_Review_Contents() ); 
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Lawyerelementor\Widgets\Lawyer_Home_Appointment() ); 
-            // \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Lawyerelementor\Widgets\Lawyer_Departments() ); 
-            // \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Lawyerelementor\Widgets\Lawyer_Business_Expert_Tab_Items() ); 
-            // \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Lawyerelementor\Widgets\Lawyer_Business_Expert() ); 
-            // \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Lawyerelementor\Widgets\Lawyer_Emergency_Contact_Section() ); 
-            // \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Lawyerelementor\Widgets\Lawyer_Single_Event() ); 
-            // \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Lawyerelementor\Widgets\Lawyer_Client_Contents() ); 
-            // \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Lawyerelementor\Widgets\Lawyer_Faq_Section() ); 
-            // \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Lawyerelementor\Widgets\Lawyer_Projects() ); 
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Lawyerelementor\Widgets\Lawyer_Contact() ); 
         }
 
